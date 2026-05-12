@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guesthouse</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b1120;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1501117716987-c8e1ecb210f9');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation: fadeUp 2s ease;
+    }
+
+    .hero p {
+      opacity: 0.9;
+      margin-bottom: 20px;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 12px;
+      background: #22c55e;
+      color: #0b1120;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #22c55e;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    .card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 5px;
+    }
+
+    .price {
+      color: #22c55e;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 18px;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    .cta {
+      text-align: center;
+      background: rgba(30, 41, 59, 0.6);
+      padding: 50px 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+    hr {
+        color: #e2e8f0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.6;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div>
+      <h1>Sunset Haven Guesthouse</h1>
+      <p>Relax. Comfort. Experience luxury at an affordable price.</p>
+      <a href="#rooms" class="btn">View Rooms</a>
+    </div>
+  </div>
+
+  <section id="rooms">
+    <h2>Our Rooms</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+        <div class="card-content">
+          <h3>Standard Room</h3>
+          <div class="meta">👤 2 Guests</div>
+          <p>Comfortable stay with essential amenities.</p>
+          <ul>
+            <li>Free WiFi</li>
+            <li>TV & Netflix</li>
+            <li>Private bathroom</li>
+          </ul>
+          <div class="price">R750 / night</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a">
+        <div class="card-content">
+          <h3>Deluxe Room</h3>
+          <div class="meta">👤 3 Guests</div>
+          <p>Spacious room with modern design.</p>
+          <ul>
+            <li>Free WiFi</li>
+            <li>Air Conditioning</li>
+            <li>Mini Fridge</li>
+          </ul>
+          <div class="price">R1100 / night</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+        <div class="card-content">
+          <h3>Luxury Suite</h3>
+          <div class="meta">👤 5 Guests</div>
+          <p>Premium experience with top-tier comfort.</p>
+          <ul>
+            <li>King-size bed</li>
+            <li>Jacuzzi</li>
+            <li>Private balcony</li>
+          </ul>
+          <div class="price">R1800 / night</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICE COMPARISON -->
+  <section>
+    <h2>Stay & Save</h2>
+    <div class="grid">
+
+      <div class="card show">
+        <div class="card-content">
+          <h3>1 Night</h3>
+          <p>Standard stay</p>
+          <div class="price">From R750</div>
+        </div>
+      </div>
+
+      <div class="card show">
+        <div class="card-content">
+          <h3>3 Nights</h3>
+          <p>Save with longer stay</p>
+          <div class="price">R2100 total</div>
+          <div class="meta">(Save R150)</div>
+        </div>
+      </div>
+
+      <div class="card show">
+        <div class="card-content">
+          <h3>7 Nights</h3>
+          <p>Best value package</p>
+          <div class="price">R4900 total</div>
+          <div class="meta">(Save R350)</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <h2>Book Your Stay Today</h2>
+      <p>Contact us directly for reservations</p>
+      <a href="https://wa.me/27XXXXXXXXX" class="btn">Book on WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+   
+    <!-- BOOKING SYSTEM -->
+  <section>
+    <h2>Check Availability</h2>
+    <div class="card show">
+      <div class="card-content">
+
+        <label>Check-in:</label><br>
+        <input type="date" id="checkin"><br><br>
+
+        <label>Check-out:</label><br>
+        <input type="date" id="checkout"><br><br>
+
+        <label>Room Type:</label><br>
+        <select id="room">
+          <option value="750">Standard - R750/night</option>
+          <option value="1100">Deluxe - R1100/night</option>
+          <option value="1800">Luxury - R1800/night</option>
+        </select><br><br>
+
+        <button class="btn" onclick="calculateTotal()">Calculate Price</button>
+
+        <p id="result" style="margin-top:15px; font-weight:bold;"></p>
+
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <footer>
+    <p>© 2026 Sunset Haven Guesthouse</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+
+    function calculateTotal() {
+      const checkin = new Date(document.getElementById('checkin').value);
+      const checkout = new Date(document.getElementById('checkout').value);
+      const pricePerNight = parseInt(document.getElementById('room').value);
+
+      if (!checkin || !checkout || checkout <= checkin) {
+        document.getElementById('result').innerText = "Please select valid dates.";
+        return;
+      }
+
+      const timeDiff = checkout - checkin;
+      const days = timeDiff / (1000 * 60 * 60 * 24);
+
+      let total = days * pricePerNight;
+
+      // calculation
+      if (days >= 7) total *= 0.9;
+      else if (days >= 3) total *= 0.95;
+
+      document.getElementById('result').innerText = `Stay: ${days} nights | Total: R${Math.round(total)}`;
+    }
+  </script>
+
+</body>
+</html>
